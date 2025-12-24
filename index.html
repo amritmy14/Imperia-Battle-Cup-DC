@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lumina Invite Series S2 – Team Submission</title>
+
+<style>
+:root{
+  --bg:#05070c;
+  --card:#0e1a2b;
+  --red:#ff2e4d;
+  --text:#ffffff;
+  --muted:#b7c0d0;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #0f2138, var(--bg));
+  color:var(--text);
+}
+
+.container{
+  max-width:480px;
+  margin:auto;
+  padding:16px;
+}
+
+.card{
+  background: linear-gradient(180deg,#0f223c,#0a1220);
+  border-radius:18px;
+  padding:20px;
+  border:1px solid rgba(255,46,77,.3);
+  box-shadow:0 0 30px rgba(255,46,77,.15);
+}
+
+.badge{
+  display:inline-block;
+  background:rgba(255,46,77,.15);
+  color:var(--red);
+  padding:6px 14px;
+  border-radius:50px;
+  font-size:12px;
+  margin-bottom:10px;
+}
+
+h1{
+  font-size:22px;
+  margin:6px 0;
+  text-align:center;
+}
+
+.subtitle{
+  text-align:center;
+  font-size:13px;
+  color:var(--red);
+  margin-bottom:16px;
+}
+
+.info{
+  font-size:13px;
+  color:var(--muted);
+  line-height:1.6;
+  margin-bottom:16px;
+}
+
+hr{
+  border:none;
+  height:1px;
+  background:linear-gradient(to right,transparent,var(--red),transparent);
+  margin:18px 0;
+}
+
+input{
+  width:100%;
+  padding:12px;
+  margin:6px 0 14px;
+  border-radius:10px;
+  border:none;
+  outline:none;
+  background:#0b1526;
+  color:white;
+}
+
+input::placeholder{color:#7d889c}
+
+.section-title{
+  margin:14px 0 8px;
+  color:var(--red);
+  font-size:14px;
+  font-weight:600;
+}
+
+button{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:12px;
+  background:linear-gradient(135deg,#ff2e4d,#ff5f73);
+  color:white;
+  font-size:15px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+button:disabled{
+  opacity:.6;
+  cursor:not-allowed;
+}
+
+.footer{
+  text-align:center;
+  font-size:11px;
+  color:#8a94a8;
+  margin-top:12px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="card">
+
+<div class="badge">BGMI • GIRLS INVITATIONAL</div>
+
+<h1>LUMINA INVITE SERIES – S2</h1>
+<div class="subtitle">Official Team Details Submission</div>
+
+<div class="info">
+• Fill all team & player details carefully<br>
+• Copy & paste IGN directly from game<br>
+• Max 6 players per team<br>
+• Submissions are private & visible only to management
+</div>
+
+<hr>
+
+<form id="teamForm">
+
+<div class="section-title">Team Details</div>
+<input name="teamName" placeholder="Team Name" required>
+<input name="teamTag" placeholder="Team Tag" required>
+<input name="contact" placeholder="Person of Contact" required>
+
+<hr>
+
+<div class="section-title">Player Details</div>
+
+<input name="p1ign" placeholder="Player 1 IGN">
+<input name="p1id" placeholder="Player 1 Character ID">
+
+<input name="p2ign" placeholder="Player 2 IGN">
+<input name="p2id" placeholder="Player 2 Character ID">
+
+<input name="p3ign" placeholder="Player 3 IGN">
+<input name="p3id" placeholder="Player 3 Character ID">
+
+<input name="p4ign" placeholder="Player 4 IGN">
+<input name="p4id" placeholder="Player 4 Character ID">
+
+<input name="p5ign" placeholder="Player 5 IGN">
+<input name="p5id" placeholder="Player 5 Character ID">
+
+<input name="p6ign" placeholder="Player 6 IGN">
+<input name="p6id" placeholder="Player 6 Character ID">
+
+<button type="submit">SUBMIT DETAILS</button>
+</form>
+
+<div class="footer">
+© DarkClaw Esports • Lumina Invite Series S2
+</div>
+
+</div>
+</div>
+
+<script>
+const form = document.getElementById("teamForm");
+const btn = form.querySelector("button");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  btn.disabled = true;
+  btn.innerText = "Submitting...";
+
+  const data = Object.fromEntries(new FormData(form));
+
+  try {
+    await fetch(
+      "https://script.google.com/macros/s/AKfycbxVTUwl4EzrjDmUt6ZkeduzcSh7TcxewPz7K2XGZKHEQdCT4zwGFUq7J4A0u-ybcZEh-g/exec",
+      {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      }
+    );
+
+    alert("Submission successful ✅\nPlease do not submit again.");
+    form.reset();
+
+  } catch (err) {
+    alert("Submission failed ❌");
+  }
+
+  btn.disabled = false;
+  btn.innerText = "SUBMIT DETAILS";
+});
+</script>
+
+
+
+</body>
+</html>
