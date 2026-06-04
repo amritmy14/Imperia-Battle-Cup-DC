@@ -3,107 +3,333 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lumina Invite Series S2 – Team Submission</title>
-
+<title>IMPERIA BATTLE CUP – Team Submission</title>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Rajdhani:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#05070c;
-  --card:#0e1a2b;
-  --red:#ff2e4d;
+  --pink:#ff2e93;
+  --pink-light:#ff8ad6;
+  --purple:#8a2be2;
   --text:#ffffff;
-  --muted:#b7c0d0;
+  --muted:#ffe4f4;
+  --placeholder:#ffd0ea;
 }
 
-*{box-sizing:border-box}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
 body{
-  margin:0;
-  font-family: 'Segoe UI', sans-serif;
-  background: radial-gradient(circle at top, #0f2138, var(--bg));
-  color:var(--text);
-}
-
-.container{
-  max-width:480px;
-  margin:auto;
-  padding:16px;
+  background:#08030f;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px 16px;
+  font-family:'Inter',sans-serif;
+  color:#fff;
 }
 
 .card{
-  background: linear-gradient(180deg,#0f223c,#0a1220);
-  border-radius:18px;
-  padding:20px;
-  border:1px solid rgba(255,46,77,.3);
-  box-shadow:0 0 30px rgba(255,46,77,.15);
+  position:relative;
+  overflow:hidden;
+
+  width:100%;
+  max-width:520px;
+
+  background:
+    radial-gradient(circle at 15% 15%, rgba(255,70,180,.65), transparent 30%),
+    radial-gradient(circle at 85% 20%, rgba(255,120,220,.45), transparent 35%),
+    radial-gradient(circle at 80% 80%, rgba(255,40,140,.35), transparent 35%),
+    radial-gradient(circle at 20% 80%, rgba(130,60,255,.45), transparent 35%),
+    linear-gradient(
+      135deg,
+      #17051d 0%,
+      #3d0c45 15%,
+      #6b1073 35%,
+      #a11488 55%,
+      #e21f8f 75%,
+      #ff5bbd 100%
+    );
+
+  border-radius:24px;
+  padding:30px;
+
+  border:1px solid rgba(255,255,255,.15);
+
+  box-shadow:
+    0 0 40px rgba(255,0,140,.45),
+    0 0 80px rgba(255,0,140,.25),
+    inset 0 0 30px rgba(255,255,255,.05);
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent 30%,
+      rgba(255,255,255,.08) 50%,
+      transparent 70%
+    );
+}
+h1{
+  font-family: 'Italiana', serif !important;
+  font-size: 52px;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 2px;
+  line-height: 1;
+
+  color: white;
+
+  text-shadow:
+    0 0 10px #fff,
+    0 0 20px #ff8ad6,
+    0 0 40px #ff2e93,
+    0 0 70px #ff2e93;
+
+  margin-bottom: 8px;
+}
+@media(max-width:600px){
+  h1{
+    font-size:40px;
+  }
+}
+.top-bar{
+  background:linear-gradient(
+    90deg,
+    #ff2e93,
+    #ff70c8,
+    #ffffff,
+    #ff70c8,
+    #ff2e93
+  );
+
+  border-radius:12px;
+  padding:10px;
+
+  text-align:center;
+  font-family:'Italiana',sans-serif;
+  font-size:18px;
+  font-weight:900;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#7a0054;
+
+  margin-bottom:22px;
+
+  box-shadow:0 0 25px rgba(255,255,255,.3);
+}
+
+.badge-wrap{
+  text-align:center;
+  margin-bottom:14px;
 }
 
 .badge{
   display:inline-block;
-  background:rgba(255,46,77,.15);
-  color:var(--red);
-  padding:6px 14px;
+
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.25);
+
+  color:white;
+
+  padding:6px 16px;
   border-radius:50px;
-  font-size:12px;
-  margin-bottom:10px;
+
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
 }
 
 h1{
-  font-size:22px;
-  margin:6px 0;
   text-align:center;
+  font-family:'Italiana',sans-serif;
+  font-size:40px;
+  font-weight:700;
+  letter-spacing:1px;
+
+  color:white;
+
+  text-shadow:
+    0 0 10px #fff,
+    0 0 20px #ff8ad6,
+    0 0 40px #ff2e93,
+    0 0 70px #ff2e93;
+
+  margin-bottom:6px;
 }
 
 .subtitle{
   text-align:center;
-  font-size:13px;
-  color:var(--red);
-  margin-bottom:16px;
+
+  color:white;
+
+  font-size:12px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+
+  margin-bottom:22px;
+
+  text-shadow:0 0 15px rgba(255,255,255,.5);
 }
 
-.info{
-  font-size:13px;
+.info-box{
+  background:rgba(255,255,255,.12);
+
+  border:1px solid rgba(255,255,255,.2);
+  border-left:4px solid white;
+
+  border-radius:12px;
+
+  padding:14px 16px;
+
   color:var(--muted);
-  line-height:1.6;
-  margin-bottom:16px;
+  font-size:13px;
+  line-height:1.9;
+
+  margin-bottom:20px;
+
+  backdrop-filter:blur(10px);
 }
 
-hr{
+.info-box span{
+  color:white;
+  font-weight:700;
+}
+
+.divider{
   border:none;
   height:1px;
-  background:linear-gradient(to right,transparent,var(--red),transparent);
-  margin:18px 0;
+
+  background:linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,.9),
+    transparent
+  );
+
+  margin:22px 0;
+}
+
+.section-title{
+  display:flex;
+  align-items:center;
+  gap:8px;
+
+  color:white;
+
+  font-size:12px;
+  font-weight:700;
+
+  letter-spacing:2px;
+  text-transform:uppercase;
+
+  margin-bottom:12px;
+
+  text-shadow:0 0 10px rgba(255,255,255,.5);
+}
+
+.section-title::before{
+  content:"";
+  width:4px;
+  height:15px;
+
+  border-radius:10px;
+
+  background:white;
+
+  box-shadow:0 0 10px white;
+}
+
+.row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
 }
 
 input{
   width:100%;
-  padding:12px;
-  margin:6px 0 14px;
-  border-radius:10px;
-  border:none;
-  outline:none;
-  background:#0b1526;
+
+  padding:13px 15px;
+  margin-bottom:10px;
+
+  border-radius:12px;
+
+  border:1px solid rgba(255,255,255,.18);
+
+  background:rgba(255,255,255,.14);
+
   color:white;
+
+  font-size:14px;
+  font-family:'Inter',sans-serif;
+
+  transition:.25s;
 }
 
-input::placeholder{color:#7d889c}
+input::placeholder{
+  color:var(--placeholder);
+}
 
-.section-title{
-  margin:14px 0 8px;
-  color:var(--red);
-  font-size:14px;
-  font-weight:600;
+input:focus{
+  outline:none;
+
+  border-color:white;
+
+  background:rgba(255,255,255,.2);
+
+  box-shadow:
+    0 0 15px rgba(255,255,255,.25),
+    0 0 30px rgba(255,120,214,.35);
 }
 
 button{
   width:100%;
-  padding:14px;
+
+  padding:15px;
+
   border:none;
-  border-radius:12px;
-  background:linear-gradient(135deg,#ff2e4d,#ff5f73);
-  color:white;
-  font-size:15px;
-  font-weight:600;
+  border-radius:14px;
+
   cursor:pointer;
+
+  background:linear-gradient(
+    90deg,
+    #ff8ad6,
+    #ffffff,
+    #ff8ad6
+  );
+
+  color:#8a0063;
+
+  font-family:'Italiana',sans-serif;
+  font-size:20px;
+  font-weight:700;
+
+  letter-spacing:2px;
+  text-transform:uppercase;
+
+  margin-top:10px;
+
+  transition:.25s;
+
+  box-shadow:
+    0 0 20px rgba(255,255,255,.5),
+    0 0 40px rgba(255,120,214,.4);
+}
+
+button:hover{
+  transform:translateY(-2px) scale(1.01);
 }
 
 button:disabled{
@@ -111,110 +337,146 @@ button:disabled{
   cursor:not-allowed;
 }
 
+.success-msg{
+  display:none;
+
+  margin-top:14px;
+
+  background:rgba(255,255,255,.12);
+
+  border:1px solid rgba(255,255,255,.2);
+
+  border-radius:12px;
+
+  padding:14px;
+
+  text-align:center;
+
+  color:white;
+}
+
 .footer{
   text-align:center;
+  margin-top:18px;
+
   font-size:11px;
-  color:#8a94a8;
-  margin-top:12px;
+  color:rgba(255,255,255,.8);
+}
+
+@media(max-width:600px){
+  .row{
+    grid-template-columns:1fr;
+  }
+
+  .card{
+    padding:22px;
+  }
+
+  h1{
+    font-size:30px;
+  }
 }
 </style>
 </head>
-
 <body>
 
-<div class="container">
 <div class="card">
+  <div class="badge-wrap">
+    <img src="/dc logo png (1) (1).png" alt="DarkClaw Esports Logo" width="80">
+  </div>
+  <div class="top-bar">✦ DarkClaw Esports ✦</div>
 
-<div class="badge">BGMI • GIRLS INVITATIONAL</div>
 
-<h1>LUMINA INVITE SERIES – S2</h1>
-<div class="subtitle">Official Team Details Submission</div>
+  <h1>IMPERIA BATTLE CUP</h1>
+  <div class="subtitle">Official Team Details Submission</div>
 
-<div class="info">
-• Fill all team & player details carefully<br>
-• Copy & paste IGN directly from game<br>
-• Max 6 players per team<br>
-• Submissions are private & visible only to management
-</div>
+  <div class="info-box">
+    <span>✦</span> Fill all team &amp; player details carefully<br>
+    <span>✦</span> Copy &amp; paste IGN directly from game<br>
+    <span>✦</span> Max 6 players per team<br>
+    <span>✦</span> Submissions visible only to management<br>
+    <span>✦</span> Add team logo in drive folder ( Mandatory )
+  </div>
 
-<hr>
+  <hr class="divider">
 
-<form id="teamForm">
+  <div class="section-title">Team Details</div>
+  <input id="teamName" placeholder="Team Name">
+  <input id="teamTag" placeholder="Team Tag">
+  <input id="contact" placeholder="Team contact no.">
 
-<div class="section-title">Team Details</div>
-<input name="teamName" placeholder="Team Name" required>
-<input name="teamTag" placeholder="Team Tag" required>
-<input name="contact" placeholder="Person of Contact" required>
+  <hr class="divider">
 
-<hr>
+  <div class="section-title">Player Details</div>
 
-<div class="section-title">Player Details</div>
-
-<input name="p1ign" placeholder="Player 1 IGN">
-<input name="p1id" placeholder="Player 1 Character ID">
-
-<input name="p2ign" placeholder="Player 2 IGN">
-<input name="p2id" placeholder="Player 2 Character ID">
-
-<input name="p3ign" placeholder="Player 3 IGN">
-<input name="p3id" placeholder="Player 3 Character ID">
-
-<input name="p4ign" placeholder="Player 4 IGN">
-<input name="p4id" placeholder="Player 4 Character ID">
-
-<input name="p5ign" placeholder="Player 5 IGN">
-<input name="p5id" placeholder="Player 5 Character ID">
-
-<input name="p6ign" placeholder="Player 6 IGN">
-<input name="p6id" placeholder="Player 6 Character ID">
-
-<button type="submit">SUBMIT DETAILS</button>
-</form>
-
-<div class="footer">
-© DarkClaw Esports • Lumina Invite Series S2
-</div>
-
-</div>
+  <div class="row">
+    <input id="p1ign" placeholder="Player 1 IGN">
+    <input id="p1id" placeholder="Player 1 Character ID">
+  </div>
+  <div class="row">
+    <input id="p2ign" placeholder="Player 2 IGN">
+    <input id="p2id" placeholder="Player 2 Character ID">
+  </div>
+  <div class="row">
+    <input id="p3ign" placeholder="Player 3 IGN">
+    <input id="p3id" placeholder="Player 3 Character ID">
+  </div>
+  <div class="row">
+    <input id="p4ign" placeholder="Player 4 IGN">
+    <input id="p4id" placeholder="Player 4 Character ID">
+  </div>
+  <div class="row">
+    <input id="p5ign" placeholder="Player 5 IGN">
+    <input id="p5id" placeholder="Player 5 Character ID">
+  </div>
+  <div class="row">
+    <input id="p6ign" placeholder="Player 6 IGN">
+    <input id="p6id" placeholder="Player 6 Character ID">
+  </div>
+<hr class="divider">
+<div class="section-title">Team drive link</div>
+<input id="teamLink" placeholder="Drive link to player photos">
+  <button id="submitBtn" onclick="submitForm()">✦ Submit Details ✦</button>
+  <div class="success-msg" id="successMsg">Submission successful ✦ Please do not submit again.</div>
+  <div class="footer">© DarkClaw Esports · IMPERIA BATTLE CUP</div>
 </div>
 
 <script>
-const form = document.getElementById("teamForm");
-const btn = form.querySelector("button");
+async function submitForm() {
+  const btn = document.getElementById('submitBtn');
+  const msg = document.getElementById('successMsg');
+  const ids = ['teamName','teamTag','contact','p1ign','p1id','p2ign','p2id','p3ign','p3id','p4ign','p4id','p5ign','p5id','p6ign','p6id' , 'teamLink'];
+  const data = {};
+  ids.forEach(id => data[id] = document.getElementById(id).value);
 
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
+  if (!data.teamName || !data.teamTag || !data.contact) {
+    alert('Please fill Team Name, Tag and Contact.');
+    return;
+  }
+
   btn.disabled = true;
-  btn.innerText = "Submitting...";
-
-  const data = Object.fromEntries(new FormData(form));
+  btn.textContent = 'Submitting...';
 
   try {
     await fetch(
-      "https://script.google.com/macros/s/AKfycbxVTUwl4EzrjDmUt6ZkeduzcSh7TcxewPz7K2XGZKHEQdCT4zwGFUq7J4A0u-ybcZEh-g/exec",
+      "https://script.google.com/macros/s/AKfycbx5xkxTq_MlXBF3oTSfGxLKz2KJ3UtGclpEoV7-pFrdqDkN5nX0L8E82oj6HkErD1cM2w/exec",
       {
         method: "POST",
         mode: "no-cors",
-        headers: {
-          "Content-Type": "application/json"
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
       }
     );
-
-    alert("Submission successful ✅\nPlease do not submit again.");
-    form.reset();
-
-  } catch (err) {
-    alert("Submission failed ❌");
+    msg.style.display = 'block';
+    ids.forEach(id => document.getElementById(id).value = '');
+  } catch (e) {
+    alert('Submission failed ❌');
   }
 
   btn.disabled = false;
-  btn.innerText = "SUBMIT DETAILS";
-});
+  btn.textContent = '✦ Submit Details ✦';
+}
 </script>
-
-
 
 </body>
 </html>
