@@ -449,9 +449,17 @@ img {
 async function submitForm() {
   const btn = document.getElementById('submitBtn');
   const msg = document.getElementById('successMsg');
-  const ids = ['teamName','teamTag','contact','p1ign','p1id','p2ign','p2id','p3ign','p3id','p4ign','p4id','p5ign','p5id','p6ign','p6id' , 'teamLink'];
+  const ids = ['teamName','teamTag','contact','p1ign','p1id','p2ign','p2id','p3ign','p3id','p4ign','p4id','p5ign','p5id','p6ign','p6id','teamLink'];
   const data = {};
   ids.forEach(id => data[id] = document.getElementById(id).value);
+
+  // ACE ban — checks all fields
+  const acePattern = /\bace\b|\bace\s*official(s)?\b/i;
+  const bannedField = ids.find(id => acePattern.test(data[id]));
+  if (bannedField) {
+    alert('Error');
+    return;
+  }
 
   if (!data.teamName || !data.teamTag || !data.contact) {
     alert('Please fill Team Name, Tag and Contact.');
