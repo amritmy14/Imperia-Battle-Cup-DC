@@ -8,12 +8,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Rajdhani:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --pink:#ff2e93;
-  --pink-light:#ff8ad6;
-  --purple:#8a2be2;
+  --steel:#7fa8c9;
+  --steel-light:#c8dcec;
+  --ice:#eaf3fa;
   --text:#ffffff;
-  --muted:#ffe4f4;
-  --placeholder:#ffd0ea;
+  --muted:#dbe8f2;
+  --placeholder:#9db6c9;
 }
 
 *{
@@ -23,7 +23,7 @@
 }
 
 body{
-  background:#08030f;
+  background:#05070c;
   min-height:100vh;
   display:flex;
   align-items:center;
@@ -41,29 +41,29 @@ body{
   max-width:520px;
 
   background:
-    radial-gradient(circle at 15% 15%, rgba(255,70,180,.65), transparent 30%),
-    radial-gradient(circle at 85% 20%, rgba(255,120,220,.45), transparent 35%),
-    radial-gradient(circle at 80% 80%, rgba(255,40,140,.35), transparent 35%),
-    radial-gradient(circle at 20% 80%, rgba(130,60,255,.45), transparent 35%),
+    radial-gradient(circle at 15% 15%, rgba(150,190,220,.35), transparent 30%),
+    radial-gradient(circle at 85% 20%, rgba(200,220,235,.25), transparent 35%),
+    radial-gradient(circle at 80% 80%, rgba(60,90,120,.35), transparent 35%),
+    radial-gradient(circle at 20% 80%, rgba(30,45,65,.5), transparent 35%),
     linear-gradient(
       135deg,
-      #17051d 0%,
-      #3d0c45 15%,
-      #6b1073 35%,
-      #a11488 55%,
-      #e21f8f 75%,
-      #ff5bbd 100%
+      #05070a 0%,
+      #0b111a 15%,
+      #131c29 35%,
+      #1c2a3c 55%,
+      #2c4258 75%,
+      #4a6b85 100%
     );
 
   border-radius:24px;
   padding:30px;
 
-  border:1px solid rgba(255,255,255,.15);
+  border:1px solid rgba(200,225,240,.2);
 
   box-shadow:
-    0 0 40px rgba(255,0,140,.45),
-    0 0 80px rgba(255,0,140,.25),
-    inset 0 0 30px rgba(255,255,255,.05);
+    0 0 40px rgba(140,180,210,.35),
+    0 0 80px rgba(80,120,150,.2),
+    inset 0 0 30px rgba(255,255,255,.04);
 }
 
 .card::before{
@@ -76,7 +76,7 @@ body{
     linear-gradient(
       120deg,
       transparent 30%,
-      rgba(255,255,255,.08) 50%,
+      rgba(255,255,255,.06) 50%,
       transparent 70%
     );
 }
@@ -92,9 +92,9 @@ h1{
 
   text-shadow:
     0 0 10px #fff,
-    0 0 20px #ff8ad6,
-    0 0 40px #ff2e93,
-    0 0 70px #ff2e93;
+    0 0 20px #c8dcec,
+    0 0 40px #7fa8c9,
+    0 0 70px #4a6b85;
 
   margin-bottom: 8px;
 }
@@ -106,9 +106,9 @@ h1{
 .top-bar{
 background:linear-gradient(
     90deg,
-    #ff8ad6,
+    #7fa8c9,
     #ffffff,
-    #ff8ad6
+    #7fa8c9
   );
 
   border-radius:12px;
@@ -120,11 +120,11 @@ background:linear-gradient(
   font-weight:900;
   letter-spacing:3px;
   text-transform:uppercase;
-  color:#7a0054;
+  color:#101823;
 
   margin-bottom:22px;
 
-  box-shadow:0 0 25px rgba(255,255,255,.3);
+  box-shadow:0 0 25px rgba(255,255,255,.25);
 }
 
 .badge-wrap{
@@ -135,8 +135,8 @@ background:linear-gradient(
 .badge{
   display:inline-block;
 
-  background:rgba(255,255,255,.15);
-  border:1px solid rgba(255,255,255,.25);
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.2);
 
   color:white;
 
@@ -160,9 +160,9 @@ h1{
 
   text-shadow:
     0 0 10px #fff,
-    0 0 20px #ff8ad6,
-    0 0 40px #ff2e93,
-    0 0 70px #ff2e93;
+    0 0 20px #c8dcec,
+    0 0 40px #7fa8c9,
+    0 0 70px #4a6b85;
 
   margin-bottom:6px;
 }
@@ -178,13 +178,13 @@ h1{
 
   margin-bottom:22px;
 
-  text-shadow:0 0 15px rgba(255,255,255,.5);
+  text-shadow:0 0 15px rgba(255,255,255,.4);
 }
 
 .info-box{
-  background:rgba(255,255,255,.12);
+  background:rgba(255,255,255,.08);
 
-  border:1px solid rgba(255,255,255,.2);
+  border:1px solid rgba(255,255,255,.16);
   border-left:4px solid white;
 
   border-radius:12px;
@@ -212,7 +212,7 @@ h1{
   background:linear-gradient(
     to right,
     transparent,
-    rgba(255,255,255,.9),
+    rgba(255,255,255,.7),
     transparent
   );
 
@@ -234,7 +234,7 @@ h1{
 
   margin-bottom:12px;
 
-  text-shadow:0 0 10px rgba(255,255,255,.5);
+  text-shadow:0 0 10px rgba(255,255,255,.4);
 }
 
 .section-title::before{
@@ -261,9 +261,9 @@ input{
 
   border-radius:12px;
 
-  border:1px solid rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.15);
 
-  background:rgba(255,255,255,.14);
+  background:rgba(255,255,255,.08);
 
   color:white;
 
@@ -282,11 +282,11 @@ input:focus{
 
   border-color:white;
 
-  background:rgba(255,255,255,.2);
+  background:rgba(255,255,255,.14);
 
   box-shadow:
-    0 0 15px rgba(255,255,255,.25),
-    0 0 30px rgba(255,120,214,.35);
+    0 0 15px rgba(255,255,255,.2),
+    0 0 30px rgba(127,168,201,.35);
 }
 
 button{
@@ -301,12 +301,12 @@ button{
 
   background:linear-gradient(
     90deg,
-    #ff8ad6,
+    #7fa8c9,
     #ffffff,
-    #ff8ad6
+    #7fa8c9
   );
 
-  color:#8a0063;
+  color:#101823;
 
   font-family:'Italiana',sans-serif;
   font-size:20px;
@@ -320,8 +320,8 @@ button{
   transition:.25s;
 
   box-shadow:
-    0 0 20px rgba(255,255,255,.5),
-    0 0 40px rgba(255,120,214,.4);
+    0 0 20px rgba(255,255,255,.4),
+    0 0 40px rgba(127,168,201,.35);
 }
 
 button:hover{
@@ -338,9 +338,9 @@ button:disabled{
 
   margin-top:14px;
 
-  background:rgba(255,255,255,.12);
+  background:rgba(255,255,255,.08);
 
-  border:1px solid rgba(255,255,255,.2);
+  border:1px solid rgba(255,255,255,.16);
 
   border-radius:12px;
 
@@ -356,7 +356,7 @@ button:disabled{
   margin-top:18px;
 
   font-size:11px;
-  color:rgba(255,255,255,.8);
+  color:rgba(255,255,255,.7);
 }
 
 @media(max-width:600px){
@@ -391,7 +391,7 @@ img {
   <div class="top-bar">✦ DarkClaw Esports ✦</div>
 
 
-  <h1>IMPERIA BATTLE CUP</h1>
+  <h1>IMPERIA BATTLE CUP S2</h1>
   <div class="subtitle">Official Team Details Submission</div>
 
   <div class="info-box">
@@ -442,7 +442,7 @@ img {
 <input id="teamLink" placeholder="Drive link to player photos">
   <button id="submitBtn" onclick="submitForm()">✦ Submit Details ✦</button>
   <div class="success-msg" id="successMsg">Submission successful ✦ Please do not submit again.</div>
-  <div class="footer">© DarkClaw Esports · IMPERIA BATTLE CUP</div>
+  <div class="footer">© DarkClaw Esports · IMPERIA BATTLE CUP S2</div>
 </div>
 
 <script>
@@ -462,7 +462,12 @@ async function submitForm() {
   }
 
   if (!data.teamName || !data.teamTag || !data.contact) {
-    alert('Please fill Team Name, Tag and Contact.');
+    alert('Please fill all details');
+    return;
+  }
+
+  if (!data.teamLink) {
+    alert('Please add the drive link to player photos.');
     return;
   }
 
